@@ -32,6 +32,16 @@ class TennisGameTest extends TestCase
     /**
      * @test
      **/
+    public function player2_gana_el_primer_punto()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Love - Fifteen",$output);
+    }
+
+    /**
+     * @test
+     **/
     public function player2_gana_el_primer_punto_con_player_1_con_1_punto()
     {
         $tennis = new TennisGame("Ivan", "Maider");
@@ -107,6 +117,36 @@ class TennisGameTest extends TestCase
         $tennis = new TennisGame("Ivan", "Maider");
         $output = $tennis->getScore();
         $this->assertEquals("Love - Thirty",$output);
+    }
+
+    /**
+     * @test
+     **/
+    public function player2_gana_el_tercer_punto_con_player_1_con_0_puntos()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Love - Forty",$output);
+    }
+
+    /**
+     * @test
+     **/
+    public function player1_gana_el_juego()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Win Player 1",$output);
+    }
+
+    /**
+     * @test
+     **/
+    public function player2_gana_el_juego()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Win Player 2",$output);
     }
 
 
