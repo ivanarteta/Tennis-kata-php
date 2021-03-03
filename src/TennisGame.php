@@ -11,8 +11,8 @@ class TennisGame
 
     private $player1;
     private $player2;
-    private $player1Score=5;
-    private $player2Score=4;
+    private $player1Score=4;
+    private $player2Score=5;
     private $player1Win = false;
     private $player2Win = false;
 
@@ -60,10 +60,16 @@ class TennisGame
                 return "Love - Forty";
             }else if ($this->player1Score == 4 && $this->player2Score < 3){
                 return "Win Player 1";
+            }else if ($this->player1Score > 3 && $this->player2Score > 3 && $this->player1Score - $this->player2Score == 2){
+                return "Win Player 1";
             }else if ($this->player1Score < 3 && $this->player2Score == 4){
                 return "Win Player 2";
-            }else if ($this->player1Score > 3 && $this->player2Score >= 3 && $this->player1Score - $this->player2Score == 1){
+            }else if ($this->player1Score > 3 && $this->player2Score > 3 && $this->player1Score - $this->player2Score == -2){
+                return "Win Player 2";
+            }else if ($this->player1Score > 3 && $this->player2Score > 3 && $this->player1Score - $this->player2Score == 1){
                 return "Advantage Player 1";
+            }else if ($this->player1Score > 3 && $this->player2Score > 3 && $this->player1Score - $this->player2Score == -1){
+                return "Advantage Player 2";
             }
 
 

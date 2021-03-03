@@ -159,5 +159,15 @@ class TennisGameTest extends TestCase
         $this->assertEquals("Advantage Player 1",$output);
     }
 
+    /**
+     * @test
+     **/
+    public function ventaja_player_2()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Advantage Player 2",$output);
+    }
+
 
 }
