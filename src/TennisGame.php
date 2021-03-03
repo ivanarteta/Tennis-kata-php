@@ -11,8 +11,8 @@ class TennisGame
 
     private $player1;
     private $player2;
-    private $player1Score;
-    private $player2Score;
+    private $player1Score=1;
+    private $player2Score=1;
     private $player1Win = false;
     private $player2Win = false;
 
@@ -34,25 +34,15 @@ class TennisGame
     }
 
     public function getScore():string{
-
-        $this->player1Score=0;
-        $this->player2Score=0;
-
-        while($this->player1Win == false && $this->player2Win == false) {
-
-            $score = rand(1, 2);
-            if ($score == 1) {
-                $this->wonPoint("$this->player1");
-            } else {
-                $this->wonPoint("$this->player2");
-            }
             if ($this->player1Score == 0 && $this->player2Score == 0) {
                 return "Love all";
             }else if($this->player1Score == 1 && $this->player2Score == 0){
                 return "Fifteen - Love";
+            }else if($this->player1Score == 1 && $this->player2Score == 1){
+                return "Fifteen all";
             }
 
 
-        }
+
     }
 }

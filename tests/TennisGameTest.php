@@ -29,5 +29,15 @@ class TennisGameTest extends TestCase
         $this->assertEquals("Fifteen - Love",$output);
     }
 
+    /**
+     * @test
+     **/
+    public function player2_gana_el_primer_punto_con_player_1_con_1_punto()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Fifteen all",$output);
+    }
+
 
 }
