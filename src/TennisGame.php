@@ -11,7 +11,7 @@ class TennisGame
 
     private $player1;
     private $player2;
-    private $player1Score=1;
+    private $player1Score=2;
     private $player2Score=2;
     private $player1Win = false;
     private $player2Win = false;
@@ -42,6 +42,8 @@ class TennisGame
                 return "Fifteen all";
             }else if($this->player1Score == 1 && $this->player2Score == 2){
                 return "Fifteen - Thirty";
+            }else if($this->player1Score == 2 && $this->player2Score == 2){
+                return "Thirty all";
             }
 
 
