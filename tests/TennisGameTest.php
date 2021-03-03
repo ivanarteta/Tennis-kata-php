@@ -92,11 +92,21 @@ class TennisGameTest extends TestCase
     /**
      * @test
      **/
-    public function player1_gana_el_tercer_punto_con_player_1_con_0_puntos()
+    public function player1_gana_el_tercer_punto_con_player_2_con_0_puntos()
     {
         $tennis = new TennisGame("Ivan", "Maider");
         $output = $tennis->getScore();
         $this->assertEquals("Forty - Love",$output);
+    }
+
+    /**
+     * @test
+     **/
+    public function player2_gana_el_segundo_punto_con_player_1_con_0_puntos()
+    {
+        $tennis = new TennisGame("Ivan", "Maider");
+        $output = $tennis->getScore();
+        $this->assertEquals("Love - Thirty",$output);
     }
 
 
