@@ -11,7 +11,7 @@ class TennisGameTest extends TestCase
     /**
      * @test
      **/
-    public function test_del_Estado_inicial()
+    public function test_de_cero_a_cero()
     {
 
         $tennis = new TennisGame("Ivan", "Maider");
@@ -166,7 +166,20 @@ class TennisGameTest extends TestCase
     {
         $tennis = new TennisGame("Ivan", "Maider");
         $output = $tennis->getScore();
-        $this->assertEquals("Advantage Player 2",$output);
+        $this->assertEquals("Advantage Maider",$output);
+    }
+
+    /**
+     * @test
+     **/
+    public function tennisMatchTest()
+    {
+        $tennis = new TennisGame("Ivan", "Mai");
+        $tennis->wonPoint("Ivan");
+        $tennis->wonPoint("Ivan");
+        $tennis->wonPoint("Mai");
+        $output = $tennis->getScore();
+        $this->assertEquals("Thirty - Fifteen",$output);
     }
 
 
